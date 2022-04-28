@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysqlsrv:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "ordens"
+    ports:
+      - "3306:3306"
+  #orders:
+  #  depends_on:
+  #    - "mysqlsrv"
+  #  build:
+  #    .
+  #  ports:
+  #    - "8081:8081"
