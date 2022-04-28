@@ -1,0 +1,8 @@
+Adicionar swagger
+Adicionar hateos
+Configurar a aplicação e o application.properties para os profiles de dev e prd para o kubernetes
+Adicionar testes unitários e testes de integração (web e ao bd com h2)
+Formatar README
+Configurar o dockerfile para fazer o build e subir a aplicação
+Configurar a aplicação para rodar no kubernetes
+
