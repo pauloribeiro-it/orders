@@ -30,4 +30,8 @@ public class AtivoService {
         return this.ativoRepository.getById(id);
     }
 
+    public Ativo recuperaPorCodigo(String codigo){
+        return this.ativoRepository.findByCodigoAtivo(codigo);
+    }
+
 }

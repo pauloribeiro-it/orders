@@ -1,6 +1,9 @@
 package investiments.orders.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -8,10 +11,13 @@ import java.time.LocalDate;
 @Entity
 @Table(name="ordem")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Ordem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_ordem")
     private Integer idOrdem;
 

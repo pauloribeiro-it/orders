@@ -1,11 +1,9 @@
 package investiments.orders.repositories;
 
-import investiments.orders.entities.Ativo;
+import investiments.orders.entities.Ordem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AtivoRepository extends JpaRepository<Ativo, Integer> {
-
-    Ativo findByCodigoAtivo(String codAtivo);
+public interface OrdemRepository extends JpaRepository<Ordem, Integer> {
 }
