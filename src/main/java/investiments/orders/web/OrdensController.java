@@ -3,7 +3,6 @@ package investiments.orders.web;
 import investiments.orders.dtos.OrdemDTO;
 import investiments.orders.service.OrdemService;
 import investiments.orders.web.form.OrdemForm;
-import investiments.orders.entities.Ordem;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +26,9 @@ public class OrdensController {
         return ResponseEntity.ok(ordemService.salvaOrdens(form));
     }
 
-
+    @GetMapping("/all")
+    public ResponseEntity<List<OrdemDTO>> getAll(){
+        return ResponseEntity.ok(ordemService.getAllOrdens());
+    }
 
 }

@@ -37,6 +37,10 @@ public class OrdemService {
                               .collect(Collectors.toList());
     }
 
+    public List<OrdemDTO> getAllOrdens(){
+        return this.repository.findAll().stream().map(this::criaOrdemDTO).collect(Collectors.toList());
+    }
+
     private Ordem criaOrdem(OrdemForm ordemForm) {
         return Ordem.builder().dataOrdem(ordemForm.getDataOrdem())
                 .ativo(ativoService.recuperaPorCodigo(ordemForm.getCodAtivo()))
@@ -51,6 +55,7 @@ public class OrdemService {
                        .codigoAtivo(ordem.getAtivo().getCodigoAtivo())
                        .dataOrdem(ordem.getDataOrdem())
                        .idOrdem(ordem.getIdOrdem())
+                       .precoAtivo(ordem.getPreco())
                        .qtdItens(ordem.getQuantidade())
                        .totalOrdem(ordem.getTotal())
                        .build();
