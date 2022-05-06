@@ -1,6 +1,8 @@
 package investiments.orders.web;
 
 import investiments.orders.dtos.OrdemDTO;
+import investiments.orders.entities.Ordem;
+import investiments.orders.repositories.FiltroOrdem;
 import investiments.orders.service.OrdemService;
 import investiments.orders.web.form.OrdemForm;
 import lombok.AllArgsConstructor;
@@ -30,5 +32,11 @@ public class OrdensController {
     public ResponseEntity<List<OrdemDTO>> getAll(){
         return ResponseEntity.ok(ordemService.getAllOrdens());
     }
+
+    @GetMapping("/filtra")
+    public ResponseEntity<List<Ordem>> filtra(FiltroOrdem filtroOrdem){
+        return ResponseEntity.ok(ordemService.filtraOrdem(filtroOrdem));
+    }
+
 
 }

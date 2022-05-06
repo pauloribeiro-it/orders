@@ -2,6 +2,7 @@ package investiments.orders.service;
 
 import investiments.orders.dtos.OrdemDTO;
 import investiments.orders.entities.Ordem;
+import investiments.orders.repositories.FiltroOrdem;
 import investiments.orders.repositories.OrdemRepository;
 import investiments.orders.web.form.OrdemForm;
 import lombok.AllArgsConstructor;
@@ -39,6 +40,10 @@ public class OrdemService {
 
     public List<OrdemDTO> getAllOrdens(){
         return this.repository.findAll().stream().map(this::criaOrdemDTO).collect(Collectors.toList());
+    }
+
+    public List<Ordem> filtraOrdem(FiltroOrdem filtroOrdem){
+        return this.repository.filtraOrdens(filtroOrdem);
     }
 
     private Ordem criaOrdem(OrdemForm ordemForm) {
