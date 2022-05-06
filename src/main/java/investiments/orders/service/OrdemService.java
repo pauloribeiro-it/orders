@@ -42,8 +42,8 @@ public class OrdemService {
         return this.repository.findAll().stream().map(this::criaOrdemDTO).collect(Collectors.toList());
     }
 
-    public List<Ordem> filtraOrdem(FiltroOrdem filtroOrdem){
-        return this.repository.filtraOrdens(filtroOrdem);
+    public List<OrdemDTO> filtraOrdem(FiltroOrdem filtroOrdem){
+        return this.repository.filtraOrdens(filtroOrdem).stream().map(this::criaOrdemDTO).collect(Collectors.toList());
     }
 
     private Ordem criaOrdem(OrdemForm ordemForm) {

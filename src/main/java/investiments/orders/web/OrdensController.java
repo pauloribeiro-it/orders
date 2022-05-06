@@ -34,7 +34,7 @@ public class OrdensController {
     }
 
     @GetMapping("/filtra")
-    public ResponseEntity<List<Ordem>> filtra(FiltroOrdem filtroOrdem){
+    public ResponseEntity<List<OrdemDTO>> filtra(FiltroOrdem filtroOrdem){
         return ResponseEntity.ok(ordemService.filtraOrdem(filtroOrdem));
     }
 
