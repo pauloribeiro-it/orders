@@ -1,11 +1,11 @@
 package investiments.orders.web;
 
 import investiments.orders.dtos.OrdemDTO;
-import investiments.orders.entities.Ordem;
 import investiments.orders.repositories.FiltroOrdem;
 import investiments.orders.service.OrdemService;
 import investiments.orders.web.form.OrdemForm;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,8 +34,8 @@ public class OrdensController {
     }
 
     @GetMapping("/filtra")
-    public ResponseEntity<List<OrdemDTO>> filtra(FiltroOrdem filtroOrdem){
-        return ResponseEntity.ok(ordemService.filtraOrdem(filtroOrdem));
+    public ResponseEntity<List<OrdemDTO>> filtra(FiltroOrdem filtroOrdem, Pageable pageable){
+        return ResponseEntity.ok(ordemService.filtraOrdem(filtroOrdem, pageable));
     }
 
 

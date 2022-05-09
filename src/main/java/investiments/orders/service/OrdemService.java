@@ -6,6 +6,7 @@ import investiments.orders.repositories.FiltroOrdem;
 import investiments.orders.repositories.OrdemRepository;
 import investiments.orders.web.form.OrdemForm;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,8 +43,8 @@ public class OrdemService {
         return this.repository.findAll().stream().map(this::criaOrdemDTO).collect(Collectors.toList());
     }
 
-    public List<OrdemDTO> filtraOrdem(FiltroOrdem filtroOrdem){
-        return this.repository.filtraOrdens(filtroOrdem).stream().map(this::criaOrdemDTO).collect(Collectors.toList());
+    public List<OrdemDTO> filtraOrdem(FiltroOrdem filtroOrdem, Pageable pageable){
+        return this.repository.filtraOrdens(filtroOrdem, pageable).stream().map(this::criaOrdemDTO).collect(Collectors.toList());
     }
 
     private Ordem criaOrdem(OrdemForm ordemForm) {
