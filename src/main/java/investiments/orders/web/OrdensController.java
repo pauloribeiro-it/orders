@@ -38,5 +38,4 @@ public class OrdensController {
         return ResponseEntity.ok(ordemService.filtraOrdem(filtroOrdem, pageable));
     }
 
-
 }

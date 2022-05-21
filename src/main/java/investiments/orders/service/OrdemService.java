@@ -26,7 +26,6 @@ public class OrdemService {
         this.repository.save(ordem);
         return criaOrdemDTO(ordem);
     }
-
     @Transactional
     public List<OrdemDTO> salvaOrdens(List<OrdemForm> ordens){
         List<Ordem> ordensBD = ordens.stream()

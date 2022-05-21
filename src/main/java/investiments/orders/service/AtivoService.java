@@ -1,13 +1,18 @@
 package investiments.orders.service;
 
 import investiments.orders.dtos.AtivoDTO;
+import investiments.orders.dtos.TipoAtivoDTO;
 import investiments.orders.entities.Ativo;
+import investiments.orders.entities.TipoAtivo;
 import investiments.orders.repositories.AtivoRepository;
 import investiments.orders.repositories.TipoAtivoRepository;
 import investiments.orders.web.form.AtivoForm;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -32,6 +37,12 @@ public class AtivoService {
 
     public Ativo recuperaPorCodigo(String codigo){
         return this.ativoRepository.findByCodigoAtivo(codigo);
+    }
+
+    public List<TipoAtivoDTO> getTipos(){
+        return this.tipoAtivoRepository.findAll().stream()
+                                                 .map(t -> new TipoAtivoDTO(t.getIdTipoAtivo(), t.getDescricao()))
+                                                 .collect(Collectors.toList());
     }
 
 }
