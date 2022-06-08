@@ -28,7 +28,7 @@ public class AtivoService {
         ativo.setDescricaoAtivo(ativoForm.getDescricaoAtivo());
         ativo.setTipoAtivo(tipoAtivoRepository.getById(ativoForm.getIdTipoAtivo()));
         ativoRepository.save(ativo);
-        return new AtivoDTO(ativo.getIdAtivo(), ativo.getCodigoAtivo(), ativo.getDescricaoAtivo(), ativo.getTipoAtivo().getDescricao());
+        return new AtivoDTO(ativo);
     }
 
     public Ativo recuperaAtivoPorId(Integer id) {
@@ -45,4 +45,7 @@ public class AtivoService {
                                                  .collect(Collectors.toList());
     }
 
+    public List<AtivoDTO> obtemTodosOsAtivos(){
+        return this.ativoRepository.findAll().stream().map(AtivoDTO::new).collect(Collectors.toList());
+    }
 }

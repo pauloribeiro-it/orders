@@ -35,4 +35,9 @@ public class AtivoController {
         return ResponseEntity.ok(this.ativoService.getTipos());
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<AtivoDTO>> obtemTodos(){
+        return ResponseEntity.ok(this.ativoService.obtemTodosOsAtivos());
+    }
+
 }
