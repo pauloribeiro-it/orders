@@ -3,7 +3,6 @@ package investiments.orders.web;
 import investiments.orders.dtos.AtivoDTO;
 import investiments.orders.dtos.TipoAtivoDTO;
 import investiments.orders.entities.Ativo;
-import investiments.orders.entities.TipoAtivo;
 import investiments.orders.service.AtivoService;
 import investiments.orders.web.form.AtivoForm;
 import lombok.AllArgsConstructor;
@@ -38,6 +37,14 @@ public class AtivoController {
     @GetMapping("/all")
     public ResponseEntity<List<AtivoDTO>> obtemTodos(){
         return ResponseEntity.ok(this.ativoService.obtemTodosOsAtivos());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> excluiAtivo(@PathVariable Integer id){
+        boolean excluiu = this.ativoService.removeAtivo(id);
+
+        return excluiu ? ResponseEntity.noContent().build() :
+                         ResponseEntity.badRequest().body("Não foi possível excluir o ativo, ordens vinculadas.");
     }
 
 }

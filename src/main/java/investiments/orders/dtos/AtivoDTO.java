@@ -12,10 +12,13 @@ public class AtivoDTO {
     private String descricaoAtivo;
     private String descricaoTipoAtivo;
 
+    private Integer idTipoAtivo;
+
     public AtivoDTO(Ativo ativo){
         this.id = ativo.getIdAtivo();
         this.codigoAtivo = ativo.getCodigoAtivo();
         this.descricaoAtivo = ativo.getDescricaoAtivo();
         this.descricaoTipoAtivo = ativo.getTipoAtivo().getDescricao();
+        this.idTipoAtivo = ativo.getTipoAtivo().getIdTipoAtivo();
     }
 }
