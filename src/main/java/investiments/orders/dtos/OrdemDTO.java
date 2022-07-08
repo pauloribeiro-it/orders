@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @AllArgsConstructor
 @Builder
@@ -17,5 +18,9 @@ public class OrdemDTO {
     private final Float precoAtivo;
     private final Integer qtdItens;
     private final LocalDate dataOrdem;
+
+    public String getDataOrdemFormatada(){
+        return dataOrdem.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    }
 
 }
