@@ -2,10 +2,14 @@ package investiments.orders.dtos;
 
 import investiments.orders.entities.Ativo;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class AtivoDTO {
     private Integer id;
     private String codigoAtivo;
@@ -21,4 +25,5 @@ public class AtivoDTO {
         this.descricaoTipoAtivo = ativo.getTipoAtivo().getDescricao();
         this.idTipoAtivo = ativo.getTipoAtivo().getIdTipoAtivo();
     }
+
 }
