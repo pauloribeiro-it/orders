@@ -6,24 +6,29 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Table(name="provento")
+@Table(name = "provento")
 @Entity
 @Getter
 @Setter
 public class Provento {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_provento")
+    @Column(name = "id_provento")
     private Integer id;
 
-    @Column(name="data_provento")
+    @Column(name = "data_provento")
     private LocalDate dataProvento;
 
-    @Column(name="valor")
+    @Column(name = "valor")
     private Float valor;
 
     @ManyToOne
-    @JoinColumn(name="id_ativo")
+    @JoinColumn(name = "id_ativo")
     private Ativo ativo;
+
+    @ManyToOne
+    @JoinColumn(name = "tipo_provento")
+    private TipoProvento tipoProvento;
 
 }

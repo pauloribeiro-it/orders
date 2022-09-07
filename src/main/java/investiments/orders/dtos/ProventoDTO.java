@@ -16,5 +16,6 @@ public class ProventoDTO {
     private String codigoAtivo;
     private Float valor;
     private LocalDate dataProvento;
+    private String tipoProvento;
 
 }

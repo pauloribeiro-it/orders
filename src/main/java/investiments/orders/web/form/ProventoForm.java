@@ -1,6 +1,7 @@
 package investiments.orders.web.form;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import investiments.orders.TipoProventoEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,4 +17,5 @@ public class ProventoForm {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataProvento;
 
+    private TipoProventoEnum tipoProvento;
 }
