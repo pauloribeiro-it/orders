@@ -2,7 +2,7 @@ package investiments.orders.service;
 
 import investiments.orders.dtos.OrdemDTO;
 import investiments.orders.entities.Ordem;
-import investiments.orders.repositories.FiltroOrdem;
+import investiments.orders.filtros.FiltroOrdem;
 import investiments.orders.repositories.OrdemRepository;
 import investiments.orders.web.form.OrdemForm;
 import lombok.AllArgsConstructor;

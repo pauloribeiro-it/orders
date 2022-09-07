@@ -1,7 +1,7 @@
 package investiments.orders.web;
 
 import investiments.orders.dtos.OrdemDTO;
-import investiments.orders.repositories.FiltroOrdem;
+import investiments.orders.filtros.FiltroOrdem;
 import investiments.orders.service.OrdemService;
 import investiments.orders.web.form.OrdemForm;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/ordens")
 @AllArgsConstructor
-public class OrdensController {
+public class OrdemController {
 
     private final OrdemService ordemService;
 

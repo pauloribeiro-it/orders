@@ -1,4 +1,4 @@
-package investiments.orders.repositories;
+package investiments.orders.filtros;
 
 import lombok.Data;
 

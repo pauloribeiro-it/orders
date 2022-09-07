@@ -2,6 +2,7 @@ package investiments.orders.repositories;
 
 import investiments.orders.entities.Ativo;
 import investiments.orders.entities.Ordem;
+import investiments.orders.filtros.FiltroOrdem;
 import org.springframework.data.domain.Pageable;
 
 import javax.persistence.EntityManager;
