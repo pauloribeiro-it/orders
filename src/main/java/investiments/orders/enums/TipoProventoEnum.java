@@ -1,4 +1,4 @@
-package investiments.orders;
+package investiments.orders.enums;
 
 import lombok.Getter;
 

@@ -1,7 +1,7 @@
 package investiments.orders.web.form;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import investiments.orders.TipoProventoEnum;
+import investiments.orders.enums.TipoProventoEnum;
 import lombok.Getter;
 import lombok.Setter;
 

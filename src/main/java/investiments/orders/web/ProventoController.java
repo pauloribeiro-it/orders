@@ -23,6 +23,11 @@ public class ProventoController {
         return ResponseEntity.ok(service.salvaProvento(form));
     }
 
+    @PostMapping("/many")
+    public ResponseEntity<List<ProventoDTO>> salvaProvento(@RequestBody List<ProventoForm> form) {
+        return ResponseEntity.ok(service.salvaProventos(form));
+    }
+
     @GetMapping("/filtra")
     public ResponseEntity<List<ProventoDTO>> filtra(FiltroProvento filtro, Pageable pageable) {
         return ResponseEntity.ok(service.filtraProventos(filtro, pageable));
