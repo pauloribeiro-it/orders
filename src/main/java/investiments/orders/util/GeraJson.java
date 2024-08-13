@@ -6,6 +6,7 @@ import investiments.orders.dtos.ProventoDTO;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -47,7 +48,7 @@ public class GeraJson {
             ProventoDTO proventoDTO = new ProventoDTO();
             proventoDTO.setDataProvento(LocalDate.parse(colunas[Posicao.data.ordinal()], dateTimeFormatter));
             proventoDTO.setTipoProvento(colunas[Posicao.tipo_provento.ordinal()]);
-            proventoDTO.setValor(Float.valueOf(colunas[Posicao.valor.ordinal()]));
+            proventoDTO.setValor(new BigDecimal(colunas[Posicao.valor.ordinal()]));
             proventoDTO.setCodigoAtivo(colunas[Posicao.codigo.ordinal()]);
             proventos.add(proventoDTO);
         }

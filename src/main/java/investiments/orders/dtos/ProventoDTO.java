@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 public class ProventoDTO {
 
     private String codigoAtivo;
-    private Float valor;
+    private BigDecimal valor;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataProvento;
     private String tipoProvento;

@@ -5,12 +5,13 @@ import investiments.orders.enums.TipoProventoEnum;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter @Setter
 public class ProventoForm {
 
-    private Float valor;
+    private BigDecimal valor;
 
     private String codigoAtivo;
 

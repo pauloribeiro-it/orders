@@ -1,15 +1,18 @@
 package investiments.orders.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Table(name = "provento")
 @Entity
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Provento {
 
     @Id
@@ -21,7 +24,7 @@ public class Provento {
     private LocalDate dataProvento;
 
     @Column(name = "valor")
-    private Float valor;
+    private BigDecimal valor;
 
     @ManyToOne
     @JoinColumn(name = "id_ativo")
@@ -31,4 +34,9 @@ public class Provento {
     @JoinColumn(name = "tipo_provento")
     private TipoProvento tipoProvento;
 
+    @Column(name="qtd")
+    private Integer qtd;
+
+    @Column(name="total")
+    private BigDecimal total;
 }
