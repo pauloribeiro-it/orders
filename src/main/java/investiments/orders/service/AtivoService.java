@@ -40,7 +40,10 @@ public class AtivoService {
     }
 
     public Ativo recuperaPorCodigo(String codigo) {
-        return this.ativoRepository.findByCodigoAtivo(codigo);
+        Ativo ativo = this.ativoRepository.findByCodigoAtivo(codigo);
+        if (ativo == null)
+            System.out.println(codigo);
+        return ativo;
     }
 
     public List<TipoAtivoDTO> getTipos() {

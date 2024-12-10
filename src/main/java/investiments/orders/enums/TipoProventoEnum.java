@@ -9,7 +9,8 @@ public enum TipoProventoEnum {
 
     RENDIMENTO(1, "Rendimento"),
     DIVIDENDO(2, "Dividendo"),
-    JCP(3, "Juros sobre capital próprio");
+    JCP(3, "Juros sobre capital próprio"),
+    REEMBOLSO(4, "Reembolso");
 
     private final Integer id;
     private final String descricao;

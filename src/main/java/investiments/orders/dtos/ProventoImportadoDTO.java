@@ -5,6 +5,7 @@ import investiments.orders.enums.TipoProventoEnum;
 import investiments.orders.util.DateUtils;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -29,14 +30,14 @@ public class ProventoImportadoDTO {
                 case DATA_PAGAMENTO -> setDataPagamento(DateUtils.parseDate((String) value));
                 case TIPO_EVENTO -> setTipoProvento(TipoProventoEnum.getByDescricao((String) value));
                 case INSTITUICAO -> setInstituicao((String) value);
-                case QUANTIDADE -> setQuantidade(Integer.valueOf(value.toString()));
-                case PRECO_UNITARIO -> setPrecoUnitario((BigDecimal) value);
+                case QUANTIDADE -> setQuantidade(StringUtils.isNumeric(value.toString()) ? new BigDecimal(value.toString()).intValue() : null);
+                case PRECO_UNITARIO -> setPrecoUnitario(StringUtils.isNumeric(value.toString()) ? (BigDecimal) value : null);
                 case VALOR_LIQUIDO -> setValorLiquido((BigDecimal) value);
             }
         });
     }
 
-    public String getCodigoProduto(){
+    public String getCodigoProduto() {
         return Arrays.stream(this.produto.split("-")).findFirst().map(String::trim).orElseThrow(() -> new IllegalArgumentException("Código de produto inválido."));
     }
 }
